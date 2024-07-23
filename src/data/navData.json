@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "to": "about",
+    "section": "About"
+  },
+  {
+    "id": 2,
+    "to": "services",
+    "section": "Services"
+  },
+ 
+  {
+    "id": 3,
+    "to": "projects",
+    "section": "Projects"
+  },
+  {
+    "id": 4,
+    "to": "contacts",
+    "section": "Contacts"
+  }
+]
