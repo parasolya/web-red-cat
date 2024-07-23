@@ -1,14 +1,14 @@
-type TitleProps = {
-  firstWords: string;
-  secondWords: string;
-};
+import { TitleProps } from "@/@types";
+import clsx from "clsx";
 
-const Title: React.FC<TitleProps> = ({ firstWords, secondWords }) => {
+
+const Title: React.FC<TitleProps> = ({ firstWords, secondWords,  firstWordsClassName,
+  secondWordsClassName }) => {
   return (
     <>
-      <h1 className="font-thin text-[40px] md:text-[67px] lg:text-[98px] tracking-tight leading-none uppercase">
+      <h1 className={clsx("font-thin text-[40px] md:text-[67px] lg:text-[98px] tracking-tight leading-none uppercase", firstWordsClassName)}>
         {firstWords}{' '}
-        <span className="font-medium ">{secondWords}</span>
+        <span className={clsx("font-medium", secondWordsClassName)}>{secondWords}</span>
       </h1>
     </>
   );

@@ -25,7 +25,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "#FF5757",
+        primary: "#EC8205",
         "gray-900": "#010A05",
       },
       spacing: {
