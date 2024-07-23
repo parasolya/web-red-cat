@@ -26,7 +26,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#EC8205",
-        "gray-900": "#010A05",
+        lightBrown: '#EFEAE4',
+        brown: '#3E2810',
+        darkBrown: '#120C05',
+        lightGray: "#F0F2F2",
+      },
+      backgroundImage: {
+        heroMob:
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)), image-set(url("/bg-hero.jpg") 1x, url("/bg-hero.jpg") 2x)',
+        heroTab:
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)), image-set(url("/bg-hero.jpg") 1x, url("/bg-hero.jpg") 2x)',
+        heroDesk:
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.7), rgba(2, 15, 8, 0.5)), image-set(url("/bg-hero.jpg") 1x, url("/bg-hero.jpg") 2x)',
       },
       spacing: {
         '26': '5.8rem',

@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="absolute left-0 top-9 md:top-6 z-20 w-full bg-transparent">
+      <header className="absolute left-0 top-9 md:top-6 z-20 w-full text-white bg-white bg-opacity-20">
         <div className="container flex justify-between items-center">
           <Logo />
 

@@ -6,7 +6,7 @@ const Title: React.FC<TitleProps> = ({ firstWords, secondWords,  firstWordsClass
   secondWordsClassName }) => {
   return (
     <>
-      <h1 className={clsx("font-thin text-[40px] md:text-[67px] lg:text-[98px] tracking-tight leading-none uppercase", firstWordsClassName)}>
+      <h1 className={clsx("text-brown font-thin text-[40px] md:text-[67px] lg:text-[98px] tracking-tight leading-none uppercase", firstWordsClassName)}>
         {firstWords}{' '}
         <span className={clsx("font-medium", secondWordsClassName)}>{secondWords}</span>
       </h1>

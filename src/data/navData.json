@@ -9,14 +9,19 @@
     "to": "services",
     "section": "Services"
   },
- 
   {
     "id": 3,
+    "to": "advantages",
+    "section": "Advantages"
+  },
+ 
+  {
+    "id": 4,
     "to": "projects",
     "section": "Projects"
   },
   {
-    "id": 4,
+    "id": 5,
     "to": "contacts",
     "section": "Contacts"
   }

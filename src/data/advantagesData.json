@@ -1,0 +1,29 @@
+{
+  "id": "advantages",
+  "title": {
+    "firstWords": "Our",  
+    "secondWords": "Advantages"
+  },
+  "advantages": [
+    {
+    "id": 1,
+    "name": "Attention to Detail",
+    "description": "Each project undergoes meticulous quality control to ensure a perfect result."
+  },
+  {
+    "id": 2,
+    "name": "Punctuality",
+    "description": "We adhere to deadlines and guarantee that all project phases are completed on time."
+  },
+  {
+    "id": 3,
+    "name": "Modern Technologies",
+    "description": "We utilize the latest innovations in web development to create effective and cutting-edge solutions."
+  },
+  {
+    "id": 4,
+    "name": "Planning",
+    "description": "Thorough planning at every stage of the project allows us to achieve high results and ensure transparency throughout the process."
+  }
+]
+}

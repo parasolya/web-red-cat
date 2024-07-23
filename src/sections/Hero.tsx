@@ -6,7 +6,7 @@ import { heroData } from "@/data";
 
 const Hero = () => {
   return (
-    <section id={heroData.id} className="pt-[180px] pb-26">
+    <section id={heroData.id} className="pt-[230px] pb-26 text-white bg-cover bg-center bg-no-repeat bg-heroDesk">
       <div className="container">
         <div className="md:flex justify-between lg:gap-[24px]">
           <div className="md:w-2/3 lg:w-[628px] md:flex flex-col justify-between">
@@ -21,11 +21,8 @@ const Hero = () => {
           </div>
           <div className="w-[180px] md:w-[218px] lg:w-1/2">
             <div className="lg:w-1/2 space-y-5 md:space-y-4">
-              <p className="font-thin">
-                <span className="font-normal">
-                  {heroData.description.span}
-                  <br />
-                </span>
+              <p className="mb-12">
+                <span className="font-bold">{heroData.description.span}</span>{' '}
                 {heroData.description.text}
               </p>
               <LinkButton variant="main" to="about">

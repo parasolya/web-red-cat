@@ -1,0 +1,15 @@
+{
+  "id": "about",
+  "title": {
+    "firstWords": "WHO",  
+    "secondWords": "WE ARE"
+  },
+  "description1": {
+    "span": "team of young developers",
+    "text": "brings fresh perspectives and innovative ideas to every project. With a passion for technology and a drive for excellence, we push the boundaries of what's possible, delivering solutions that are not only functional but also cutting-edge. Our collaborative spirit and commitment to continuous learning ensure that we stay ahead of industry trends and provide our clients with the most modern and effective solutions."
+  },
+  "description2": {
+    "span": "Driven by passion, united by purpose",
+    "text": ", we believe in the power of teamwork and creativity. Our youthful energy fuels our work, allowing us to tackle challenges with enthusiasm and agility. We strive to create digital experiences that resonate with users and drive business success. Together, we turn visionary ideas into reality, crafting websites and applications that stand out in a crowded digital landscape."
+  }
+}
