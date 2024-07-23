@@ -1,5 +1,12 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
+export interface TitleProps {
+  firstWords: string;
+  secondWords: string;
+  firstWordsClassName?: string;
+  secondWordsClassName?: string;
+};
+
 export interface NavMenyProps {
   className?: string;
   classNameList?: string;
