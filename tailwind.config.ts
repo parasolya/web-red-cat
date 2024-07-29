@@ -26,9 +26,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#EC8205",
-        lightBrown: '#EFEAE4',
-        brown: '#3E2810',
-        darkBrown: '#120C05',
+        lightBrown: "#EFEAE4",
+        brown: "#3E2810",
+        darkBrown: "#120C05",
         lightGray: "#F0F2F2",
       },
       backgroundImage: {
@@ -38,9 +38,11 @@ const config: Config = {
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)), image-set(url("/bg-hero.jpg") 1x, url("/bg-hero.jpg") 2x)',
         heroDesk:
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.7), rgba(2, 15, 8, 0.5)), image-set(url("/bg-hero.jpg") 1x, url("/bg-hero.jpg") 2x)',
+
+        about: 'url("/bg-cat.svg")',
       },
       spacing: {
-        '26': '5.8rem',
+        "26": "5.8rem",
       },
     },
   },

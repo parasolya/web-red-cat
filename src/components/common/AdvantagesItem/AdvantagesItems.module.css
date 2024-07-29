@@ -1,0 +1,30 @@
+.attention::before,
+.punctuality::before,
+.planning::before,
+.technologies::before {
+  display: block;
+  content: "";
+  height: 120px;
+  width: 100%;
+  background-size: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  margin-bottom: 32px;
+}
+
+.attention::before {
+  background-image: url(/advantages/attention.svg);
+}
+
+.punctuality::before {
+  background-image: url(/advantages/punctuality.svg);
+}
+
+.technologies::before {
+  background-image: url(/advantages/technologies.svg);
+}
+
+.planning::before {
+  background-image: url(/advantages/planning.svg);
+}

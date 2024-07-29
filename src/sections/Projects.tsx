@@ -5,7 +5,7 @@ const  Projects = () => {
   return (
     <section
       id="projects"
-      className="section bg-cover bg-center bg-no-repeat bg-aboutMob sm:bg-aboutTab lg:bg-aboutDesk"
+      className="section"
     >
       <div className="container">
         <div className="md:flex justify-between lg:gap-[24px]">
