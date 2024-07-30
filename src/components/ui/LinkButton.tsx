@@ -16,7 +16,7 @@ const LinkButton: React.FC<LinkButtonProp> = ({
       className={clsx(
         'flex items-center justify-center cursor-pointer',
         variant === 'main' &&
-          `w-full h-[53px] md:h-[50px] lg:h-[60px] box-border text-white font-bold text-xl  bg-primary bg-opacity-80 hover:bg-opacity-100 transition`,
+          `w-full h-[53px] md:h-[50px] lg:h-[60px] box-border text-white font-semibold text-xl  bg-primary bg-opacity-80 hover:bg-opacity-100 transition`,
         className
       )}
    

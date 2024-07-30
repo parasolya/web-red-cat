@@ -20,8 +20,8 @@ const Hero = () => {
             </div>
           </div>
           <div className="w-[180px] md:w-[218px] lg:w-1/2">
-            <div className="lg:w-1/2 space-y-5 md:space-y-4">
-              <p className="mb-12">
+            <div className="lg:w-1/2 space-y-5 md:space-y-20">
+              <p className="font-extralight">
                 <span className="font-bold">{heroData.description.span}</span>{' '}
                 {heroData.description.text}
               </p>

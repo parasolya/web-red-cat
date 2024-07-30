@@ -11,15 +11,16 @@
     "description": "Each project undergoes meticulous quality control to ensure a perfect result."
   },
   {
-    "id": "punctuality",
-    "name": "Punctuality",
-    "description": "We adhere to deadlines and guarantee that all project phases are completed on time."
-  },
-  {
     "id": "technologies",
     "name": "Modern Technologies",
     "description": "We utilize the latest innovations in web development to create effective and cutting-edge solutions."
   },
+  {
+    "id": "punctuality",
+    "name": "Punctuality",
+    "description": "We adhere to deadlines and guarantee that all project phases are completed on time."
+  },
+
   {
     "id": "planning",
     "name": "Planning",

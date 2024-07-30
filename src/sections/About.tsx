@@ -3,7 +3,7 @@ import { aboutData } from "@/data";
 
 const About: React.FC = () => {
   return (
-    <section id={aboutData.id} className="section text-white font-extralight bg-about bg-[#445757]">
+    <section id={aboutData.id} className="section text-white font-extralight bg-about bg-brown">
       <div className="container">
         <div className="md:flex justify-between lg:gap-[24px]">
           <div className="md:w-2/3 lg:w-[628px] md:flex flex-col justify-between mb-4 md:mb-0">
@@ -28,7 +28,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="w-full md:flex flex-col lg:flex-row gap-[64px] lg:justify-between md:-mt-[60px] lg:mt-0">
-          <div className="order-1 lg:order-2 w-full lg:w-1/2 flex justify-end md:justify-start lg:justify-end">
+          <div className="order-1 lg:order-2 w-full lg:w-2/5 flex justify-end md:justify-start lg:justify-end">
             <div className="mt-8 md:mt-0">
               <p className="lg:tracking-[0.12em] font-semibold uppercase">
                 Innovation Meets
@@ -43,7 +43,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="order-2 lg:order-1 lg:w-full md:flex justify-center md:justify-end lg:justify-between">
-            <div className="order-1 lg:order-2 w-full lg:w-1/2 flex justify-end md:justify-start">
+            <div className="order-1 lg:order-2 w-full lg:w-2/5 flex justify-end md:justify-start">
               <div className="mt-8 md:mt-0">
                 <p className="lg:tracking-[0.12em] font-semibold  uppercase">
                   Your Success,
