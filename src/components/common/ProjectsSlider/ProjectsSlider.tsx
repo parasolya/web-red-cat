@@ -14,21 +14,20 @@ const ProjectsSlider = () => {
     <>
       <Swiper
         modules={[Navigation, Pagination, EffectFade]}
-        spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={2}
+        spaceBetween={30}
         pagination={{ clickable: true }}
-        // navigation
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
         }}
-        effect="fade"
-        // loop={true}
+
+        className='swiper h-[100px]'
       >
-        <SwiperSlide>slide 1</SwiperSlide>
-        <SwiperSlide>slide 2</SwiperSlide>
-        <SwiperSlide>slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide className="bg-slate-500">slide 1</SwiperSlide>
+        <SwiperSlide className="bg-slate-500">slide 2</SwiperSlide>
+        <SwiperSlide className="bg-slate-500">slide 3</SwiperSlide>
+        <SwiperSlide className="bg-slate-500">Slide 4</SwiperSlide>
       </Swiper>
       <div className="swiper-navigation">
         <Button variant="slider" className="prev" type="button">
