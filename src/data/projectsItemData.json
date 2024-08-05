@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "src": "/projects/adrenaline.webp",
+    "alt": "site adrenaline"
+  },
+  {
+    "id": "2",
+    "src": "/projects/forest-2.webp",
+    "alt": "site forest-2"
+  },
+  {
+    "id": "3",
+    "src": "/projects/grape-paradise.webp",
+    "alt": "site grape-paradise"
+  },
+  {
+    "id": "4",
+    "src": "/projects/jewel-queen.webp",
+    "alt": "site jewel-queen"
+  },
+  {
+    "id": "5",
+    "src": "/projects/superfood.webp",
+    "alt": "site superfood"
+  },
+  {
+    "id": "6",
+    "src": "/projects/topbookofra.webp",
+    "alt": "site topbookofra"
+  },
+  {
+    "id": "7",
+    "src": "/projects/vesta.webp",
+    "alt": "site vesta"
+  }
+]

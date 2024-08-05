@@ -8,6 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import Button from "@/components/ui/Button";
+import { projectsItemData } from "@/data";
+import ProjectsItem from "../ProjectsItem";
 
 const ProjectsSlider = () => {
   return (
@@ -16,18 +18,24 @@ const ProjectsSlider = () => {
         modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={2}
         spaceBetween={30}
+        loop={true}
         pagination={{ clickable: true }}
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
         }}
-
-        className='swiper h-[100px]'
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          768: { slidesPerView: 2, spaceBetween: 40 },
+          1280: { slidesPerView: 2, spaceBetween: 174 },
+        }}
+        className='swiper'
       >
-        <SwiperSlide className="bg-slate-500">slide 1</SwiperSlide>
-        <SwiperSlide className="bg-slate-500">slide 2</SwiperSlide>
-        <SwiperSlide className="bg-slate-500">slide 3</SwiperSlide>
-        <SwiperSlide className="bg-slate-500">Slide 4</SwiperSlide>
+        {projectsItemData.map(({ id, src, alt}) => (
+          <SwiperSlide key={id}>
+            <ProjectsItem src={src} alt={alt} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="swiper-navigation">
         <Button variant="slider" className="prev" type="button">
