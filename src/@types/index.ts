@@ -79,11 +79,11 @@ export interface ProjectsItemProps {
 //   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 // }
 
-// export interface TextareaProps {
-//   id: string;
-//   label?: string;
-//   placeholder?: string;
-//   type?: string;
-//   className?: string;
-//   classNameLabel?: string;
-// }
+export interface TextareaProps {
+  id: string;
+  label?: string;
+  placeholder?: string;
+  type?: string;
+  className?: string;
+  classNameLabel?: string;
+}

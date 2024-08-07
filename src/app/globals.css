@@ -43,3 +43,7 @@ html,
 }
 
 
+.mySwiper {
+  --swiper-theme-color: #EC8205; 
+  --swiper-pagination-bottom: 0px;
+}

@@ -4,11 +4,13 @@
     "src": "/projects/adrenaline.webp",
     "alt": "site adrenaline"
   },
+
   {
     "id": "2",
-    "src": "/projects/forest-2.webp",
-    "alt": "site forest-2"
+    "src": "/projects/vesta.webp",
+    "alt": "site vesta"
   },
+
   {
     "id": "3",
     "src": "/projects/grape-paradise.webp",
@@ -31,7 +33,7 @@
   },
   {
     "id": "7",
-    "src": "/projects/vesta.webp",
-    "alt": "site vesta"
+    "src": "/projects/forest-2.webp",
+    "alt": "site forest-2"
   }
 ]
