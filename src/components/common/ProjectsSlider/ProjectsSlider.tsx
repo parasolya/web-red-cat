@@ -11,9 +11,11 @@ import Button from "@/components/ui/Button";
 import { projectsItemData } from "@/data";
 import ProjectsItem from "../ProjectsItem";
 
+import styles from "./ProjectsSlider.module.css";
+
 const ProjectsSlider = () => {
   return (
-    <>
+    <div className="">
       <Swiper
         modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={2}
@@ -27,25 +29,25 @@ const ProjectsSlider = () => {
         breakpoints={{
           0: { slidesPerView: 1, spaceBetween: 16 },
           768: { slidesPerView: 2, spaceBetween: 40 },
-          1280: { slidesPerView: 2, spaceBetween: 174 },
+          1280: { slidesPerView: 2, spaceBetween: 60 },
         }}
-        className='swiper'
+        className={`h-[298px] md:h-[380px] mySwiper`}
       >
-        {projectsItemData.map(({ id, src, alt}) => (
+        {projectsItemData.map(({ id, src, alt }) => (
           <SwiperSlide key={id}>
             <ProjectsItem src={src} alt={alt} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-navigation">
-        <Button variant="slider" className="prev" type="button">
+      <div className="swiper-navigation relative flex gap-8 mb-8">
+        <Button variant="slider" className="prev left-[257px]" type="button">
           Prev
         </Button>
-        <Button variant="slider" className="next" type="button">
+        <Button variant="slider" className="next right-[257px]" type="button">
           Next
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 
