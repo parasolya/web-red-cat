@@ -28,6 +28,7 @@ const config: Config = {
         primary: "#EC8205",
         lightBrown: "#EFEAE4",
         brown: "#3E2810",
+        titleBrown: "#452C0E",
         darkBrown: "#120C05",
         lightGray: "#F0F2F2",
       },
