@@ -15,7 +15,7 @@ import styles from "./ProjectsSlider.module.css";
 
 const ProjectsSlider = () => {
   return (
-    <div className="">
+    <div className="relative mb-30 md:mb-20">
       <Swiper
         modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={2}
@@ -39,7 +39,7 @@ const ProjectsSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-navigation relative flex gap-8 mb-8">
+      <div className="swiper-navigation relative flex gap-8 -mt-6">
         <Button variant="slider" className="prev left-[257px]" type="button">
           Prev
         </Button>
