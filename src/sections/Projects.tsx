@@ -4,7 +4,7 @@ import Title from "@/components/ui/Title";
 
 const Projects = () => {
   return (
-    <section id="projects" className="pt-20 pb-0">
+    <section id="projects" className="pt-20 pb-12">
       <div className="container">
         <div className="mb-4 md:mb-16">
           <Title firstWords="Our" secondWords="Projects" />

@@ -2,6 +2,7 @@ import Title from "@/components/ui/Title";
 import { contactsData } from "@/data";
 import Phone from "/public/contacts/phone.svg";
 import Email from "/public/contacts/email.svg";
+import ContactsForm from "@/components/common/ContactsForm";
 
 const ContactUs: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const ContactUs: React.FC = () => {
       className="section text-white bg-about bg-brown"
     >
       <div className="container">
-        <div>
+      <div className="mb-4 md:mb-16">
           <Title
             firstWords="Contact"
             secondWords="us"
@@ -18,6 +19,7 @@ const ContactUs: React.FC = () => {
             secondWordsClassName="text-white"
           />
         </div>
+        <div className="flex justify-between">
         <div className={`flex flex-col gap-4 md:gap-8 xl:gap-10`}>
           <div className="xl:[--x-hidden:-80px]">
             <div className="flex items-center gap-4 xl:gap-6">
@@ -56,6 +58,8 @@ const ContactUs: React.FC = () => {
             </div>
           </div>
         </div>
+       <ContactsForm />
+      </div>
       </div>
     </section>
   );
