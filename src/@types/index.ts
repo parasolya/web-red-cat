@@ -39,6 +39,12 @@ export interface ProjectsItemProps {
   alt: string;
 }
 
+export interface IFormValues {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export interface PhoneNumberProp {
   phone: string;
 }
