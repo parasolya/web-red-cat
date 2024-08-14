@@ -15,7 +15,7 @@ ref) => {
     <>
       <label
         htmlFor={id}
-        className={`block font-thin text-[12px] md:text-xs leading-6 tracking-widest tracking-6 mb-1 lg:mb-2 ${classNameLabel}`}
+        className={`block font-extralight text-[12px] md:text-xs leading-6 tracking-widest tracking-6 mb-1 lg:mb-2 ${classNameLabel}`}
       >
         Message
       </label>

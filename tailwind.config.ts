@@ -26,6 +26,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#EC8205",
+        errors: "#FF5757",
         lightBrown: "#EFEAE4",
         brown: "#3E2810",
         titleBrown: "#452C0E",

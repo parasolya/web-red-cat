@@ -32,7 +32,7 @@ const ContactUs: React.FC = () => {
               <div className="cursor-pointer text-[16px] leading-[1.30] text-white md:text-lightLarge md:font-medium xl:text-extraLarge">
                 <a
                   href={`mailto:${contactsData.email}`}
-                  className="transition hover:text-primary focus:text-primary"
+                  className="font-extralight transition hover:text-primary focus:text-primary"
                 >
                   {contactsData.email}
                 </a>
@@ -50,7 +50,7 @@ const ContactUs: React.FC = () => {
               <div className="cursor-pointer font-inter text-[16px] leading-[1.30] text-white md:text-xl  md:font-medium xl:text-3xl">
                 <a
                   href={`tel:${contactsData.phone}`}
-                  className="transition hover:text-primary focus:text-primary"
+                  className="font-extralight transition hover:text-primary focus:text-primary"
                 >
                   {contactsData.phone}
                 </a>

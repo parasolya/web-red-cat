@@ -41,6 +41,7 @@ export interface ProjectsItemProps {
 
 export interface IFormValues {
   name: string;
+  phone: string;
   email: string;
   message: string;
 }

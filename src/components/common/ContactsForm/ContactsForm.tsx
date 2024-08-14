@@ -1,106 +1,149 @@
-'use client'
+"use client";
 
 import { IFormValues, InputProps } from "@/@types";
 import Button from "@/components/ui/Button";
+import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
+import { useState } from "react";
 import { Path, useForm, UseFormRegister, SubmitHandler } from "react-hook-form";
 
 
-// interface IFormValues {
-//   "First Name": string;  
-// }
-
-// type InputProps = {
-//   label: Path<IFormValues>;
-//   register: UseFormRegister<IFormValues>;
-//   required: boolean;
-// };
-
-
-// const Input = ({ label, register, required }: InputProps) => (
-//   <>
-//     <label>{label}</label>
-//     <input {...register(label, { required })} />
-//   </>
-// );
 
 const ContactsForm = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm<IFormValues>();
+  const {
+    register,
+    trigger,
+    formState: { errors },
+    reset,
+    handleSubmit,
+  } = useForm<IFormValues>();
 
-  const onSubmit: SubmitHandler<IFormValues> = data => {
-    alert(JSON.stringify(data));
+
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
   };
 
- 
+  const onSubmit: SubmitHandler<IFormValues> = async (data) => {
+    const formData = { ...data, checkbox: isChecked };
+    localStorage.setItem('formData', JSON.stringify(formData));
+    const isValid = await trigger();
+    if (isValid) {
+      // setShowSuccessMessage(true);
+      reset();
+      // setTimeout(() => {
+      //   setShowSuccessMessage(false);
+      // }, 1000);
+    }
+  };
+
   return (
     <div>
-    <form onSubmit={handleSubmit(onSubmit)}>
-    <div className="flex flex-col justify-between gap-4">
-          <div className="lg:w-full flex flex-col gap-8 md:flex-row lg:flex-col justify-between md:gap-4 lg:gap-6">
-            <div className="w-full md:w-1/3 lg:w-full h-50 flex gap-8 flex-col lg:flex-row md:gap-4">
-              <div className="lg:w-full">
-                <Input
-                  id="name"
-                  label="Full name"
-                  placeholder="John Smith"
-                  type="text"
-                  {...register('name', {
-                    required: {
-                      value: true,
-                      message: '❌ This field is required.',
-                    },
-                    maxLength: {
-                      value: 30,
-                      message: '❌ Max length is 30 characters.',
-                    },
-                    pattern: {
-                      value: /^[A-Za-z]+\s[A-Za-z]+$/,
-                      message: '❌ Incorrect name',
-                    },
-                  })}
-                  errors={errors}
-                />
-              </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex flex-col justify-between gap-6 md:gap-4 lg:gap-6">
+          <div className="mb-4 md:mb-8 md:flex justify-between md:gap-2 lg:gap-4">
+            <div className="w-full md:w-1/2 md:h-50 mb-4 md:mb-0 flex flex-col gap-4">
+              <Input
+                id="name"
+                label="Full name"
+                type="text"
+                placeholder="John Smith"
+                errors={errors}
+                {...register('name', {
+                  required: {
+                    value: true,
+                    message: '❌ This field is required.',
+                  },
+                  maxLength: {
+                    value: 30,
+                    message: '❌ Max length is 30 characters.',
+                  },
+                  pattern: {
+                    value: /^[A-Za-z]+\s[A-Za-z]+$/,
+                    message: '❌ Incorrect name',
+                  },
+                })}
+              />
 
-              <div className="lg:w-full">
-                <Input
-                  id="email"
-                  label="E-mail"
-                  placeholder="johnsmith@email.com"
-                  type="text"
-                  {...register('email', {
-                    required: {
-                      value: true,
-                      message: '❌ This field is required.',
-                    },
-                    pattern: {
-                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                      message: '❌ Incorrect email',
-                    },
-                  })}
-                  errors={errors}
-                />
-              </div>
+              <Input
+                id="email"
+                label="E-mail"
+                type="text"
+                placeholder="johnsmith@email.com"
+                errors={errors}
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: '❌ This field is required.',
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    message: '❌ Incorrect email',
+                  },
+                })}
+              />
+
+           
+
+              <Input
+                id="phone"
+                label="Phone"
+                type="text"
+                placeholder="(097) 12 34 567"
+                errors={errors}
+                {...register('phone', {
+                  required: {
+                    value: true,
+                    message: '❌ This field is required.',
+                  },
+                  maxLength: {
+                    value: 20,
+                    message: '❌ Max length is 20 characters.',
+                  },
+                  pattern: {
+                    value: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
+                    message: '❌ Incorrect phone',
+                  },
+                })}
+              />
             </div>
 
-            <div className="w-full md:w-2/3 lg:w-full">
+            <div className="w-full md:w-1/2 h-50">
               <Textarea
                 id="message"
                 label="Message"
-                className='block resize-none py-1 md:py-2 px-2 h-[193px] md:h-[221px] lg:h-[174px]'
+                className="block resize-none py-1 md:py-2 px-2 h-[196px] md:h-[204px] lg:h-[184px]"
                 {...register('message')}
               />
             </div>
           </div>
+          <div className="md:flex gap-4">
+            <div className="md:w-1/2 lg:w-full mb-4 md:mb-0 flex gap-2 items-center">
+              <Checkbox
+                id="checkbox"
+                type="checkbox"
+                className="hidden appearance-none"
+                checked={isChecked}
+                onChange={handleChange}
+              />
 
-          <div className="ml-auto mr-0">
-            <Button variant="text" type="submit">
-              SEND
-            </Button>
+              <p className="font-extralight text-[12px] md:text-xs leading-loose ">
+                I confirm my consent to the processing of personal data.
+              </p>
+            </div>
+
+            <div className="ml-auto mr-0">
+              <Button variant="text" type="submit">
+                SEND
+              </Button>
+            </div>
           </div>
         </div>
-    </form>
+      </form>
     </div>
   );
 };
