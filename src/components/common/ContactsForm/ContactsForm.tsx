@@ -8,8 +8,6 @@ import Textarea from "@/components/ui/Textarea";
 import { useState } from "react";
 import { Path, useForm, UseFormRegister, SubmitHandler } from "react-hook-form";
 
-
-
 const ContactsForm = () => {
   const {
     register,
@@ -18,8 +16,6 @@ const ContactsForm = () => {
     reset,
     handleSubmit,
   } = useForm<IFormValues>();
-
-
 
   const [isChecked, setIsChecked] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -30,7 +26,7 @@ const ContactsForm = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = async (data) => {
     const formData = { ...data, checkbox: isChecked };
-    localStorage.setItem('formData', JSON.stringify(formData));
+    localStorage.setItem("formData", JSON.stringify(formData));
     const isValid = await trigger();
     if (isValid) {
       // setShowSuccessMessage(true);
@@ -44,7 +40,7 @@ const ContactsForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-col justify-between gap-6 md:gap-4 lg:gap-6">
+        <div className="flex flex-col justify-between gap-6 md:gap-4 lg:gap-6">
           <div className="mb-4 md:mb-8 md:flex justify-between md:gap-2 lg:gap-4">
             <div className="w-full md:w-1/2 md:h-50 mb-4 md:mb-0 flex flex-col gap-4">
               <Input
@@ -53,18 +49,18 @@ const ContactsForm = () => {
                 type="text"
                 placeholder="John Smith"
                 errors={errors}
-                {...register('name', {
+                {...register("name", {
                   required: {
                     value: true,
-                    message: '❌ This field is required.',
+                    message: "❌ This field is required.",
                   },
                   maxLength: {
                     value: 30,
-                    message: '❌ Max length is 30 characters.',
+                    message: "❌ Max length is 30 characters.",
                   },
                   pattern: {
                     value: /^[A-Za-z]+\s[A-Za-z]+$/,
-                    message: '❌ Incorrect name',
+                    message: "❌ Incorrect name",
                   },
                 })}
               />
@@ -75,19 +71,17 @@ const ContactsForm = () => {
                 type="text"
                 placeholder="johnsmith@email.com"
                 errors={errors}
-                {...register('email', {
+                {...register("email", {
                   required: {
                     value: true,
-                    message: '❌ This field is required.',
+                    message: "❌ This field is required.",
                   },
                   pattern: {
                     value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: '❌ Incorrect email',
+                    message: "❌ Incorrect email",
                   },
                 })}
               />
-
-           
 
               <Input
                 id="phone"
@@ -95,18 +89,18 @@ const ContactsForm = () => {
                 type="text"
                 placeholder="(097) 12 34 567"
                 errors={errors}
-                {...register('phone', {
+                {...register("phone", {
                   required: {
                     value: true,
-                    message: '❌ This field is required.',
+                    message: "❌ This field is required.",
                   },
                   maxLength: {
                     value: 20,
-                    message: '❌ Max length is 20 characters.',
+                    message: "❌ Max length is 20 characters.",
                   },
                   pattern: {
                     value: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
-                    message: '❌ Incorrect phone',
+                    message: "❌ Incorrect phone",
                   },
                 })}
               />
@@ -117,7 +111,7 @@ const ContactsForm = () => {
                 id="message"
                 label="Message"
                 className="block resize-none py-1 md:py-2 px-2 h-[196px] md:h-[204px] lg:h-[184px]"
-                {...register('message')}
+                {...register("message")}
               />
             </div>
           </div>

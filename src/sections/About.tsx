@@ -15,7 +15,7 @@ const About: React.FC = () => {
           </div>
           <div className="w-[180px] md:w-[218px] lg:w-1/2 lg:mb-[72px]">
             <div className="lg:w-1/2 space-y-5 md:space-y-4">
-              <p className="">
+              <p className="font-extralight">
                 <span className="font-bold">{aboutData.description1.span}</span>{" "}
                 {aboutData.description1.text}
               </p>
