@@ -45,7 +45,7 @@ const ContactsForm = () => {
             <div className="w-full md:w-1/2 md:h-50 mb-4 md:mb-0 flex flex-col gap-4">
               <Input
                 id="name"
-                label="Full name"
+                label="Name"
                 type="text"
                 placeholder="John Smith"
                 errors={errors}
@@ -87,7 +87,7 @@ const ContactsForm = () => {
                 id="phone"
                 label="Phone"
                 type="text"
-                placeholder="(097) 12 34 567"
+                placeholder="380971234567"
                 errors={errors}
                 {...register("phone", {
                   required: {
