@@ -4,7 +4,7 @@ import { formData } from "@/data";
 import { IFormValues } from "@/@types";
 const { name, phone, email, checkbox } = formData.namedField;
 
-export const formSchema: Record<keyof IFormValues, RegisterOptions> = {
+const formSchema: Record<keyof IFormValues, RegisterOptions> = {
   name: {
     required: `${name.errorMessage}`,
     pattern: {
@@ -41,3 +41,6 @@ export const formSchema: Record<keyof IFormValues, RegisterOptions> = {
   //   required: `${checkbox.errorMessage}`,
   // },
 };
+
+
+export default formSchema;

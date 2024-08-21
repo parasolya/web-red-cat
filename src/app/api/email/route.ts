@@ -3,23 +3,24 @@ import nodemailer from 'nodemailer';
 
 import { configuration } from '@/utils';
 
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  secure: true,
+  auth: {
+    user: configuration.apiMailUser,
+    pass: configuration.apiMailPass,
+  },
+});
+
 export async function POST(request: Request) {
   try {
     const { name, phone, email, message } = await request.json();
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      secure: true,
-      auth: {
-        user: configuration.apiMailUser,
-        pass: configuration.apiMailPass,
-      },
-    });
-
     const mailOptions = {
       from: configuration.apiMailFrom,
       to: configuration.apiMailTo,
-      subject: 'Нова заявка з сайту Adrenaline Tour',
+      subject: 'Нова заявка з сайту Web Red Cat',
       text: `Імʼя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nКоментар: ${message}`,
     };
 
