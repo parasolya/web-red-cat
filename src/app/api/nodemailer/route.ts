@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: configuration.apiMailFrom,
       to: configuration.apiMailTo,
-      subject: 'Нова заявка з сайту Web Red Cat',
+      subject: 'Нове повідомлення з сайту Web Red Cat',
       text: `Імʼя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nКоментар: ${message}`,
     };
 

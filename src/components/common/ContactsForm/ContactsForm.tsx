@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
+import { formData } from "@/data";
 import { useState } from "react";
 import { Path, useForm, UseFormRegister, SubmitHandler } from "react-hook-form";
 
@@ -17,8 +18,17 @@ const ContactsForm = () => {
     handleSubmit,
   } = useForm<IFormValues>();
 
+  const {
+    namedField: { name, phone, email, checkbox, textarea },
+    buttonText,
+    modalInfo: { successful, failure, button },
+  } = formData;
+
   const [isChecked, setIsChecked] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [sendError, setSendError] = useState(false);
+  const [sendEmail, setSendEmail] = useState(false);
 
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -45,24 +55,31 @@ const ContactsForm = () => {
             <div className="w-full md:w-1/2 md:h-50 mb-4 md:mb-0 flex flex-col gap-4">
               <Input
                 id="name"
-                label="Name"
+                label={name.label}
                 type="text"
-                placeholder="John Smith"
+                placeholder={name.placeholder}
                 errors={errors}
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "❌ This field is required.",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message: "❌ Max length is 30 characters.",
-                  },
-                  pattern: {
-                    value: /^[A-Za-z]+\s[A-Za-z]+$/,
-                    message: "❌ Incorrect name",
-                  },
-                })}
+                // {...register("name", {
+                //   required: {
+                //     value: true,
+                //     message: "❌ This field is required.",
+                //   },
+                //   maxLength: {
+                //     value: 30,
+                //     message: "❌ Max length is 30 characters.",
+                //   },
+                //   pattern: {
+                //     value: /^[A-Za-z]+\s[A-Za-z]+$/,
+                //     message: "❌ Incorrect name",
+                //   },
+                // })}
+                
+              //   {...register("name" as keyof IFormValues)}
+              // errorMessage={errors[name as keyof IFormValues]?.message}
+
+
+          //       {...register('name', formSchema.name)}
+          // errorMessage={errors.name?.message}
               />
 
               <Input
@@ -132,7 +149,7 @@ const ContactsForm = () => {
 
             <div className="ml-auto mr-0">
               <Button variant="text" type="submit">
-                SEND
+                {buttonText}
               </Button>
             </div>
           </div>
