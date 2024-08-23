@@ -4,9 +4,9 @@
       "label": "Name",
       "placeholder": "John Smith",
       "errorMessage": "❌ This field is required.",
-      "minLength": "❌ Min length is 2 characters, mandatory inclusion of letters.",
-      "maxLength": "❌ Max length is 30 characters.",
-      "rules": "❌ Incorrect name"
+      "rules": "❌ Incorrect name",
+      "minLength": "❌ Min length is 2 letters.",
+      "maxLength": "❌ Max length is 30 letters."
     },
     "phone": {
       "label": "Phone",

@@ -6,8 +6,9 @@ import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import { formData } from "@/data";
+
 import { useState } from "react";
-import { Path, useForm, UseFormRegister, SubmitHandler } from "react-hook-form";
+import { Path, useForm, SubmitHandler } from "react-hook-form";
 
 const ContactsForm = () => {
   const {
@@ -58,28 +59,23 @@ const ContactsForm = () => {
                 label={name.label}
                 type="text"
                 placeholder={name.placeholder}
-                errors={errors}
-                // {...register("name", {
-                //   required: {
-                //     value: true,
-                //     message: "❌ This field is required.",
-                //   },
-                //   maxLength: {
-                //     value: 30,
-                //     message: "❌ Max length is 30 characters.",
-                //   },
-                //   pattern: {
-                //     value: /^[A-Za-z]+\s[A-Za-z]+$/,
-                //     message: "❌ Incorrect name",
-                //   },
-                // })}
-                
-              //   {...register("name" as keyof IFormValues)}
-              // errorMessage={errors[name as keyof IFormValues]?.message}
-
-
-          //       {...register('name', formSchema.name)}
-          // errorMessage={errors.name?.message}
+                errorMessage={errors.name?.message}
+                {...register("name", {
+                  required: name.errorMessage || true,
+                  pattern: {
+                    value:
+                      /^(?!.*\s{2})[А-Яа-яЄєІіЇїҐґʼA-Za-z'-]+(\s[А-Яа-яЄєІіЇїҐґʼA-Za-z'-]+)*$/,
+                    message: name.rules,
+                  },
+                  minLength: {
+                    value: 2,
+                    message: name.minLength,
+                  },
+                  maxLength: {
+                    value: 30,
+                    message: name.maxLength,
+                  },
+                })}
               />
 
               <Input
@@ -87,15 +83,12 @@ const ContactsForm = () => {
                 label="E-mail"
                 type="text"
                 placeholder="johnsmith@email.com"
-                errors={errors}
+                errorMessage={errors.email?.message}
                 {...register("email", {
-                  required: {
-                    value: true,
-                    message: "❌ This field is required.",
-                  },
+                  required: email.errorMessage || true,
                   pattern: {
                     value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: "❌ Incorrect email",
+                    message: email.rules,
                   },
                 })}
               />
@@ -105,7 +98,7 @@ const ContactsForm = () => {
                 label="Phone"
                 type="text"
                 placeholder="380971234567"
-                errors={errors}
+                errorMessage={errors.phone?.message}
                 {...register("phone", {
                   required: {
                     value: true,

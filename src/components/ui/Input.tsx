@@ -8,7 +8,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     label,
     placeholder,
     type,
-    errors,
+    errorMessage,
     className,
     classNameLabel,
     ...rest
@@ -32,7 +32,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
 
         <input
           className={clsx('w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 hover:bg-opacity-10 cursor-pointer hover:outline-none transition', id === 'phone' && 'pl-0', className,
-            errors[id] ? 'text-errors' : '')}
+            errorMessage ? 'text-errors' : '')}
           id={id}
           autoComplete={id}
           type={type}
@@ -41,12 +41,12 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           {...rest}
         />
       </div>
-      {errors[id] && typeof errors[id]?.message === 'string' && (
+      {errorMessage && typeof errorMessage === 'string' && (
         <p
           className="absolute right-0 font-extralight text-xs tracking-widest tracking-6 text-errors"
           style={{ visibility: 'visible' }}
         >
-          {errors[id]?.message}
+          {errorMessage}
         </p>
       )}
     </div>

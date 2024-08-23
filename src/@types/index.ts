@@ -43,7 +43,8 @@ export interface IFormValues {
   name: string;
   phone: string;
   email: string;
-  message: string;
+  message?: string;
+  approval: boolean;
 }
 
 export interface PhoneNumberProp {
@@ -64,12 +65,15 @@ type FieldErrorsToRecord<T> = {
   [K in keyof T]: T[K] extends FieldErrors<any> ? Record<string, FieldError | undefined> : T[K];
 };
 
+
+
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   label?: string;
   placeholder?: string;
   type: string;
-  errors: FieldErrorsToRecord<FieldValues>; 
+ 
+  errorMessage?: string;
   className?: string;
   classNameLabel?: string;
   checked?: boolean;
