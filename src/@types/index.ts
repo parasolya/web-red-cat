@@ -39,11 +39,6 @@ export interface ProjectsItemProps {
   alt: string;
 }
 
-export interface ContactsProps {
-  mailClassName?: string;
-  phoneClassName?: string;
-}
-
 export interface IFormValues {
   name: string;
   phone: string;
@@ -54,10 +49,6 @@ export interface IFormValues {
 
 export interface PhoneNumberProp {
   phone: string;
-}
-
-export interface EmailProp {
-  mail: string;
 }
 
 export interface SocialProp {
@@ -103,4 +94,12 @@ export interface TextareaProps {
   type?: string;
   className?: string;
   classNameLabel?: string;
+}
+
+export interface EmailProp {
+  mailClassName?: string;
+}
+
+export interface PhoneProp {
+  phoneClassName?: string;
 }
