@@ -1,9 +1,8 @@
 import Title from "@/components/ui/Title";
 import { contactsData } from "@/data";
-import Phone from "/public/contacts/phone.svg";
-import Email from "/public/contacts/email.svg";
 import ContactsForm from "@/components/common/ContactsForm";
-import Contacts from "@/components/common/Contacts";
+import Phone from "@/components/ui/PhoneNumber";
+import Email from "@/components/ui/Email";
 
 const ContactUs: React.FC = () => {
   return (
@@ -21,7 +20,12 @@ const ContactUs: React.FC = () => {
           />
         </div>
         <div className="flex justify-between">
-          <Contacts mailClassName="fext-white font-extralight " phoneClassName="fext-white font-extralight" />
+          <div className={`flex flex-col gap-4 md:gap-8 xl:gap-10`}>
+            <Email mailClassName="fext-white font-extralight " />
+
+            <Phone phoneClassName="fext-white font-extralight" />
+          </div>
+
           <ContactsForm />
         </div>
       </div>

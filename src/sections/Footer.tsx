@@ -1,14 +1,19 @@
 import Logo from "@/components/ui/Logo";
 import React from "react";
-import Contacts from "@/components/common/Contacts";
+import Email from "@/components/ui/Email";
+import Phone from "@/components/ui/PhoneNumber";
 
 const Footer = () => {
   return (
-    <footer className="section">
+    <footer className="section pb-8">
       <div className="container flex justify-between">
        
         <Logo />
-        <Contacts phoneClassName="font-light"/>
+        <div className={`flex flex-col gap-4 md:gap-8 xl:gap-10`}>
+            <Email mailClassName="fext-white font-extralight " />
+
+            <Phone phoneClassName="font-light" />
+          </div>
       </div>
     </footer>
   );
