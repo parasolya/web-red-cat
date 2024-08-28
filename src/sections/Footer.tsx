@@ -10,7 +10,7 @@ const Footer = () => {
        
         <Logo />
         <div className={`flex flex-col gap-4 md:gap-8 xl:gap-10`}>
-            <Email mailClassName="fext-white font-extralight " />
+            <Email mailClassName="fext-white font-extralight " iconClassName="h-40 w-40" />
 
             <Phone phoneClassName="font-light" />
           </div>
