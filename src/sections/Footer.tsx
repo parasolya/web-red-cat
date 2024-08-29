@@ -6,13 +6,13 @@ import Phone from "@/components/ui/PhoneNumber";
 const Footer = () => {
   return (
     <footer className="section pb-8">
-      <div className="container flex justify-between">
+      <div className="container flex justify-between border-b-2 border-primary">
        
         <Logo />
-        <div className={`flex flex-col gap-4 md:gap-8 xl:gap-10`}>
-            <Email mailClassName="fext-white font-extralight " iconClassName="h-40 w-40" />
+        <div className="flex flex-col gap-4 mb-8">
+            <Email mailClassName="font-light" iconClassName="h-8 w-8" />
 
-            <Phone phoneClassName="font-light" />
+            <Phone phoneClassName="font-light xl:text-l" iconClassName="h-8 w-8" />
           </div>
       </div>
     </footer>
