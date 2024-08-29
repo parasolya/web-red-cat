@@ -98,8 +98,10 @@ export interface TextareaProps {
 
 export interface EmailProp {
   mailClassName?: string;
+  iconClassName?: string;
 }
 
 export interface PhoneProp {
   phoneClassName?: string;
+  iconClassName?: string;
 }
