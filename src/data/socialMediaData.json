@@ -1,0 +1,5 @@
+[
+  { "id": 1, "label": "Facebook", "href": "https://www.facebook.com/" },
+  { "id": 2, "label": "Instagram", "href": "https://www.instagram.com/" },
+  { "id": 3, "label": "LinkedIn", "href": "https://www.linkedin.com/" }
+]
