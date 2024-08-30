@@ -105,3 +105,16 @@ export interface PhoneProp {
   phoneClassName?: string;
   iconClassName?: string;
 }
+
+import { FC, SVGProps } from 'react';
+
+export interface SocialMediaProps {
+  label: string;
+  href: string;
+  icon: FC<SVGProps<SVGSVGElement>>;
+}
+export interface IconMap {
+  Facebook: React.FC<React.SVGProps<SVGSVGElement>>;
+  Instagram: React.FC<React.SVGProps<SVGSVGElement>>;
+  LinkedIn: React.FC<React.SVGProps<SVGSVGElement>>;
+}
