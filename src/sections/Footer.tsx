@@ -23,11 +23,11 @@ const Footer = () => {
       <div className="container flex justify-between border-b-2 border-primary">
        
         <Logo />
-        <ul>
+        <ul className="flex w-1/6 justify-between pt-4">
           {socialMediaData.map(({ id, label, href }) => {
             const IconComponent = iconMap[label as keyof IconMap]
             return (
-              <li key={id} className="bg-white bg-opacity-5">
+              <li key={id} className="">
                 <SocialMedia label={label} href={href} icon={IconComponent} />
               </li>
             );
