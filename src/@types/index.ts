@@ -1,5 +1,10 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
+export enum Pages {
+  MAIN = "/",
+  POLICY = "policy",
+}
+
 export interface TitleProps {
   firstWords: string;
   secondWords: string;
@@ -25,13 +30,19 @@ export interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-export interface LinkButtonProp
+export interface ScrollButtonProp
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant: "main" | "navLink";
   children: React.ReactNode;
   to: string;
   className?: string;
   handleMenuToggled?: () => void;
+}
+
+export interface LinkButtonProp {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
 }
 
 export interface ProjectsItemProps {
