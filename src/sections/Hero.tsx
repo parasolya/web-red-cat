@@ -1,12 +1,15 @@
 "use client";
 
-import LinkButton from "@/components/ui/LinkButton";
+import ScrollButton from "@/components/ui/ScrollButton";
 import Title from "@/components/ui/Title";
 import { heroData } from "@/data";
 
 const Hero = () => {
   return (
-    <section id={heroData.id} className="pt-[230px] pb-26 text-white bg-cover bg-center bg-no-repeat bg-heroDesk">
+    <section
+      id={heroData.id}
+      className="pt-[230px] pb-26 text-white bg-cover bg-center bg-no-repeat bg-heroDesk"
+    >
       <div className="container">
         <div className="md:flex justify-between lg:gap-[24px]">
           <div className="md:w-2/3 lg:w-[628px] md:flex flex-col justify-between">
@@ -22,12 +25,12 @@ const Hero = () => {
           <div className="w-[180px] md:w-[218px] lg:w-1/2">
             <div className="lg:w-1/2 space-y-5 md:space-y-20">
               <p className="font-extralight">
-                <span className="font-bold">{heroData.description.span}</span>{' '}
+                <span className="font-bold">{heroData.description.span}</span>{" "}
                 {heroData.description.text}
               </p>
-              <LinkButton variant="main" to="about">
+              <ScrollButton variant="main" to="contacts">
                 {heroData.textButton}
-              </LinkButton>
+              </ScrollButton>
             </div>
           </div>
         </div>

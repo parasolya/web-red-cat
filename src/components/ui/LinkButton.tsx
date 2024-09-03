@@ -1,37 +1,13 @@
 import { LinkButtonProp } from '@/@types';
 import clsx from 'clsx';
-import { Link as LinkScroll } from 'react-scroll';
+import Link from 'next/link';
 
-const LinkButton: React.FC<LinkButtonProp> = ({
-  variant,
-  to,
-  children,
-  className,
-  handleMenuToggled
-}) => {
- 
-
+const LinkButton: React.FC<LinkButtonProp> = ({ children, href, className }) => {
   return (
-    <LinkScroll
-      className={clsx(
-        'flex items-center justify-center cursor-pointer',
-        variant === 'main' &&
-          `w-full h-[53px] md:h-[50px] lg:h-[60px] box-border text-white font-semibold text-xl  bg-primary bg-opacity-60 hover:bg-opacity-100 transition`,
-        className
-      )}
-   
-      to={to}
-      activeClass="active"
-      spy={true}
-      smooth={true}
-      offset={0}
-      duration={500}
-      tabIndex={0}
-      onClick={handleMenuToggled}
-    >
-      {children}
-    </LinkScroll>
-  );
-};
+    <Link className={clsx('', className)} href={href}>
+    {children}
+    </Link>
+  )
+}
 
-export default LinkButton;
+export default LinkButton
