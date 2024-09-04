@@ -2,6 +2,7 @@
 
 import NavMenu from "@/components/common/NavMenu";
 import Logo from "@/components/ui/Logo";
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 // import Logo from '../components/ui/Logo';
 // import BurgerMenu from '@/components/BurgerMenu';
@@ -9,6 +10,8 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const pathname = usePathname();
+  const routers = useRouter();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
@@ -29,13 +32,20 @@ const Header = () => {
     setIsMenuToggled(!isMenuToggled);
   };
 
+  const handleClick = (to: string) => {
+    if (pathname === '/policy') {
+      routers.push(`/#${to}`);
+    }
+    return;
+  };
+
   return (
     <>
       <header className="absolute left-0 top-9 md:top-6 z-20 w-full text-white bg-white bg-opacity-20">
         <div className="container flex justify-between items-center">
           <Logo />
 
-          <NavMenu className="notMd:hidden" />
+          <NavMenu className="notMd:hidden" onClick={handleClick}/>
           
          
           {/* 

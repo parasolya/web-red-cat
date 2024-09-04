@@ -1,10 +1,11 @@
 import { NavMenyProps } from '@/@types';
 import { navData } from '@/data';
 import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 import { Link as LinkScroll } from 'react-scroll';
 
-const NavMenu: React.FC<NavMenyProps> = ({ className, classNameList, classNameLink, onMenuToggled }) => {
-
+const NavMenu: React.FC<NavMenyProps> = ({ className, classNameList, classNameLink, onClick }) => {
+  const pathname = usePathname();
   return (
     <nav className={className}>
       <ul className={clsx('flex items-end lg:items-center justify-between gap-6 lg:gap-8', classNameList)}>
@@ -19,7 +20,9 @@ const NavMenu: React.FC<NavMenyProps> = ({ className, classNameList, classNameLi
               offset={0}
               duration={500}
               tabIndex={0}
-              onClick={onMenuToggled}
+              onClick={() => onClick(to)}
+              // href='#'
+              // ignoreCancelEvents={true}
             >
               {section}
             </LinkScroll>
