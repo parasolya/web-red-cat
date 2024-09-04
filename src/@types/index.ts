@@ -16,7 +16,7 @@ export interface NavMenyProps {
   className?: string;
   classNameList?: string;
   classNameLink?: string;
-  onMenuToggled?: () => void;
+  onClick: (to: string) => void;
 }
 
 export interface BurgerMenuProps {
