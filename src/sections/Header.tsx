@@ -1,8 +1,8 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import NavMenu from "@/components/common/NavMenu";
 import Logo from "@/components/ui/Logo";
-import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 // import Logo from '../components/ui/Logo';
 // import BurgerMenu from '@/components/BurgerMenu';
@@ -10,15 +10,17 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const [pendingSection, setPendingSection] = useState<string | null>(null);
   const pathname = usePathname();
-  const routers = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       const navbar = document.getElementById("navbar");
       if (navbar && !navbar.contains(event.target as Node)) {
         setIsMenuToggled(false);
-      }
+      setPendingSection(null);
+    }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -33,11 +35,22 @@ const Header = () => {
   };
 
   const handleClick = (to: string) => {
-    if (pathname === '/policy') {
-      routers.push(`/#${to}`);
+    if (pathname === "/policy") {
+      setPendingSection(to);
+      router.push("/");
     }
     return;
   };
+
+  useEffect(() => {
+    if (pathname === "/" && pendingSection) {
+      const section = document.getElementById(pendingSection);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+      setPendingSection(null);
+    }
+  }, [pathname, pendingSection]);
 
   return (
     <>
@@ -45,9 +58,8 @@ const Header = () => {
         <div className="container flex justify-between items-center">
           <Logo />
 
-          <NavMenu className="notMd:hidden" onClick={handleClick}/>
-          
-         
+          <NavMenu className="notMd:hidden" onClick={handleClick} />
+
           {/* 
           {!isMenuToggled && (
             <div id="navbar" className="md:hidden"> */}

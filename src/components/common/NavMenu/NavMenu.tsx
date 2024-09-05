@@ -1,18 +1,31 @@
-import { NavMenyProps } from '@/@types';
-import { navData } from '@/data';
-import clsx from 'clsx';
-import { usePathname } from 'next/navigation';
-import { Link as LinkScroll } from 'react-scroll';
+import { NavMenyProps } from "@/@types";
+import { navData } from "@/data";
+import clsx from "clsx";
+import { Link as LinkScroll } from "react-scroll";
 
-const NavMenu: React.FC<NavMenyProps> = ({ className, classNameList, classNameLink, onClick }) => {
-  const pathname = usePathname();
+import { useRouter } from "next/router";
+
+const NavMenu: React.FC<NavMenyProps> = ({
+  className,
+  classNameList,
+  classNameLink,
+  onClick,
+}) => {
   return (
     <nav className={className}>
-      <ul className={clsx('flex items-end lg:items-center justify-between gap-6 lg:gap-8', classNameList)}>
+      <ul
+        className={clsx(
+          "flex items-end lg:items-center justify-between gap-6 lg:gap-8",
+          classNameList
+        )}
+      >
         {navData.map(({ id, to, section }) => (
           <li key={id}>
             <LinkScroll
-              className={clsx('outline-none shadow-none cursor-pointer  hover:underline focus:underline transition', classNameLink)}
+              className={clsx(
+                "outline-none shadow-none cursor-pointer  hover:underline focus:underline transition",
+                classNameLink
+              )}
               activeClass="active"
               to={to}
               spy={true}
