@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const LinkButton: React.FC<LinkButtonProp> = ({ children, href, className }) => {
   return (
-    <Link className={clsx('', className)} href={href}>
+    <Link className={clsx('text-xs ', className)} href={href}>
     {children}
     </Link>
   )

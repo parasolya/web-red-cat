@@ -12,7 +12,7 @@ const Email: React.FC<EmailProp> = ({ iconClassName, mailClassName }) => {
       height={32}
     />
 
-    <div className="cursor-pointer text-[16px] leading-[1.30] md:text-lightLarge md:font-medium xl:text-extraLarge">
+    <div className="cursor-pointer text-[16px] leading-[1.30]">
       <a
         href={`mailto:${contactsData.email}`}
         className={clsx(
