@@ -18,8 +18,9 @@ const iconMap = {
 
 const Footer = () => {
   return (
-    <footer className="py-8 bg-brown bg-opacity-20">
-      <div className="container flex justify-between border-b-2 border-primary">
+    <footer className="pt-8 pb-4 bg-brown bg-opacity-20">
+      <div className="container">
+      <div className="flex justify-between border-b-2 border-primary mb-4">
         <Logo />
         <ul className="flex w-1/6 justify-between pt-4">
           {socialMediaData.map(({ id, label, href }) => {
@@ -40,8 +41,10 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="flex justify-around text-titleBrown">
         <LinkButton href={Pages.POLICY}>{footerData.policy}</LinkButton>
+        <p className="text-xs">{footerData.rights}</p>
+      </div>
       </div>
     </footer>
   );
