@@ -23,15 +23,15 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       >
         {label}
       </label>
-      <div className="w-full flex items-center overflow-hidden">
+      <div className="group w-full flex items-center overflow-hidden">
         {id === 'phone' && (
-          <div className="block whitespace-nowrap text-center font-extralight md:text-xs lg:text-xl leading-6 py-1 lg:py-0 pl-2 bg-white bg-opacity-5">
+          <div className="block whitespace-nowrap text-center font-extralight md:text-xs lg:text-xl leading-6 py-1 lg:py-0 pl-2 bg-white bg-opacity-5 group-hover:bg-opacity-10 ">
             +
           </div>
         )}
 
         <input
-          className={clsx('w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 hover:bg-opacity-10 cursor-pointer hover:outline-none transition', id === 'phone' && 'pl-0', className,
+          className={clsx('w-full bg-white bg-opacity-5 py-1 lg:py-0 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 group-hover:bg-opacity-10 outline-none cursor-pointer group-hover:outline-none transition', id !== 'phone' && 'pl-2', className,
             errorMessage ? 'text-errors' : '')}
           id={id}
           autoComplete={id}
