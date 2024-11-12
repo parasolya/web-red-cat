@@ -9,10 +9,13 @@ import { formData } from "@/data";
 
 import { useState } from "react";
 import { Path, useForm, SubmitHandler } from "react-hook-form";
+import useFormPersist from 'react-hook-form-persist';
 
 const ContactsForm = () => {
   const {
     register,
+    watch,
+    setValue,
     trigger,
     formState: { errors },
     reset,
@@ -24,6 +27,11 @@ const ContactsForm = () => {
     buttonText,
     modalInfo: { successful, failure, button },
   } = formData;
+
+  useFormPersist("storageKey", {
+    watch, 
+    setValue
+  });
 
   const [isChecked, setIsChecked] = useState(false);
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
