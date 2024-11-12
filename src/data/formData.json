@@ -11,8 +11,8 @@
     "phone": {
       "label": "Phone",
       "placeholder": "380967777323",
-      "errorMessage": "❌ This field is required.",
-      "rules": "❌ Incorrect phone. Enter the country code and phone number. Example: \"+380967777323\""
+      "maxLength": "❌ Max length is 13 characters.",
+      "rules": "❌ Enter the number in the format 380971234567"
     },
     "email": {
       "label": "E-mail",
