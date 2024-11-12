@@ -26,7 +26,6 @@ const formSchema: Record<keyof IFormValues, RegisterOptions<IFormValues>> = {
   },
 
   phone: {
-    required: phone.errorMessage || true,
     pattern: {
       value: /^\d{1,3}\d{9,15}$/,
       message: phone.rules,

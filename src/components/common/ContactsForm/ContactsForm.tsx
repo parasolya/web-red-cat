@@ -105,7 +105,7 @@ const ContactsForm = () => {
                 label="Phone"
                 type="text"
                 placeholder="380971234567"
-                errorMessage={errors.phone?.message}
+                errorMessage={errors?.phone?.message}
                 {...register("phone", {
                
                   maxLength: {
