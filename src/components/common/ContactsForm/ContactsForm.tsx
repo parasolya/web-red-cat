@@ -44,8 +44,7 @@ const ContactsForm = () => {
   };
 
   const onSubmit: SubmitHandler<IFormValues> = async (data) => {
-    const formData = { ...data, checkbox: isChecked };
-    localStorage.setItem("formData", JSON.stringify(formData));
+    
     const isValid = await trigger();
     if (isValid) {
       // setShowSuccessMessage(true);
@@ -106,19 +105,16 @@ const ContactsForm = () => {
                 label="Phone"
                 type="text"
                 placeholder="380971234567"
-                errorMessage={errors.phone?.message}
+                errorMessage={errors?.phone?.message}
                 {...register("phone", {
-                  required: {
-                    value: true,
-                    message: "❌ This field is required.",
-                  },
+               
                   maxLength: {
-                    value: 20,
-                    message: "❌ Max length is 20 characters.",
+                    value: 13,
+                    message: phone.maxLength,
                   },
                   pattern: {
-                    value: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
-                    message: "❌ Incorrect phone",
+                    value: /^(380)([3-9][0-9]{8})$/,
+                    message: phone.rules,
                   },
                 })}
               />
