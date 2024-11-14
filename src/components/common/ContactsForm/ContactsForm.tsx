@@ -10,6 +10,7 @@ import { formData } from "@/data";
 import { useState } from "react";
 import { Path, useForm, SubmitHandler } from "react-hook-form";
 import useFormPersist from 'react-hook-form-persist';
+import { sendingEmail } from '@/utils';
 
 const ContactsForm = () => {
   const {
@@ -34,7 +35,7 @@ const ContactsForm = () => {
   });
 
   const [isChecked, setIsChecked] = useState(false);
-  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+ 
   const [modalOpen, setModalOpen] = useState(false);
   const [sendError, setSendError] = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
@@ -45,15 +46,26 @@ const ContactsForm = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = async (data) => {
     
-    const isValid = await trigger();
-    if (isValid) {
-      // setShowSuccessMessage(true);
-      reset();
-      // setTimeout(() => {
-      //   setShowSuccessMessage(false);
-      // }, 1000);
-    }
-  };
+   
+      setSendError(false);
+      const sanitizedData = {
+        ...data,
+        name: data.name.trim(),
+        phone: data.phone.trim(),
+        email: data.email.trim(),
+        message: data.message ? data.message.trim() : '',
+      };
+      try {
+        setSendEmail(true);
+        await sendingEmail(sanitizedData);
+        reset();
+      } catch (error) {
+        setSendError(true);
+      } finally {
+        // setModalOpen(true);
+        setSendEmail(false);
+      }
+    };
 
   return (
     <div>
@@ -105,9 +117,9 @@ const ContactsForm = () => {
                 label="Phone"
                 type="text"
                 placeholder="380971234567"
-                errorMessage={errors?.phone?.message}
+                errorMessage={errors.phone?.message}
                 {...register("phone", {
-               
+                  required: name.errorMessage || true,
                   maxLength: {
                     value: 13,
                     message: phone.maxLength,

@@ -11,6 +11,7 @@
     "phone": {
       "label": "Phone",
       "placeholder": "380967777323",
+      "errorMessage": "❌ This field is required.",
       "maxLength": "❌ Max length is 13 characters.",
       "rules": "❌ Enter the number in the format 380971234567"
     },
