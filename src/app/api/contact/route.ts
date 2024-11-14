@@ -1,25 +1,26 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-import { configuration } from '@/utils';
 
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   secure: true,
   auth: {
-    user: configuration.apiMailUser,
-    pass: configuration.apiMailPass,
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASSWORD,
   },
 });
+
+
 
 export async function POST(request: Request) {
   try {
     const { name, phone, email, message } = await request.json();
 
     const mailOptions = {
-      from: configuration.apiMailFrom,
-      to: configuration.apiMailTo,
+      from: process.env.MAIL_FROM,
+      to: process.env.MAIL_TO,
       subject: 'Нове повідомлення з сайту Web Red Cat',
       text: `Імʼя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nКоментар: ${message}`,
     };
