@@ -55,6 +55,7 @@ export interface IFormValues {
   phone: string;
   email: string;
   message?: string;
+  checkbox: boolean;
   approval: boolean;
 }
 
@@ -95,6 +96,7 @@ export interface CheckboxtProp {
   className?: string;
   classNameLabel?: string;
   checked?: boolean;
+  errorMessage: FieldError | undefined;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -128,4 +130,12 @@ export interface IconMap {
   Facebook: React.FC<React.SVGProps<SVGSVGElement>>;
   Instagram: React.FC<React.SVGProps<SVGSVGElement>>;
   LinkedIn: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  title: string;
+  message: string;
+  buttontext: string;
+  close: () => void;
 }

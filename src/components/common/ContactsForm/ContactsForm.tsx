@@ -7,10 +7,13 @@ import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import { formData } from "@/data";
 
+import dynamic from 'next/dynamic';
 import { useState } from "react";
 import { Path, useForm, SubmitHandler } from "react-hook-form";
 import useFormPersist from 'react-hook-form-persist';
 import { sendingEmail } from '@/utils';
+
+const Modal = dynamic(() => import('@/components/ui/Modal'));
 
 const ContactsForm = () => {
   const {
@@ -23,6 +26,8 @@ const ContactsForm = () => {
     handleSubmit,
   } = useForm<IFormValues>();
 
+
+
   const {
     namedField: { name, phone, email, checkbox, textarea },
     buttonText,
@@ -34,14 +39,15 @@ const ContactsForm = () => {
     setValue
   });
 
-  const [isChecked, setIsChecked] = useState(false);
  
-  const [modalOpen, setModalOpen] = useState(false);
+ 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [sendError, setSendError] = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
 
-  const handleChange = () => {
-    setIsChecked(!isChecked);
+  const isChecked = watch('checkbox', false);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue('checkbox', e.target.checked)
   };
 
   const onSubmit: SubmitHandler<IFormValues> = async (data) => {
@@ -148,7 +154,9 @@ const ContactsForm = () => {
                 type="checkbox"
                 className="hidden appearance-none"
                 checked={isChecked}
-                onChange={handleChange}
+                errorMessage={errors.checkbox}
+                {...register('checkbox', { required: true,
+                  onChange: (e) => handleChange(e), })}
               />
 
               <p className="font-extralight text-[12px] md:text-xs leading-loose ">
@@ -164,6 +172,14 @@ const ContactsForm = () => {
           </div>
         </div>
       </form>
+      <button onClick={() => setIsModalOpen(true)}>Open dialog</button>
+      <Modal
+      isOpen={isModalOpen}
+      close={() => setIsModalOpen(false)}
+      title='hello'
+      message='success'
+      buttontext='Cancel'
+      />
     </div>
   );
 };
