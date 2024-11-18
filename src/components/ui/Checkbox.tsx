@@ -1,4 +1,5 @@
 import { CheckboxtProp } from '@/@types';
+import clsx from "clsx";
 
 const Checkbox: React.FC<CheckboxtProp> = ({
   id,
@@ -7,13 +8,20 @@ const Checkbox: React.FC<CheckboxtProp> = ({
   className,
   classNameLabel,
   checked,
+  errorMessage,
   ...rest
 }) => {
   return (
     <>
       <label
         htmlFor={id}
-        className="h-6 w-6 flex flex-shrink-0 items-center justify-center  border border-white cursor-pointer"
+        className={clsx(
+          "h-6 w-6 flex flex-shrink-0 items-center justify-center border cursor-pointer",
+          {
+            "border-errors": errorMessage && !checked, 
+            "border-white": !errorMessage || checked, 
+          }
+        )}
       >
         <div className="h-4 w-4 flex-shrink-0 flex items-center justify-center bg-opacity-5 bg-white hover:bg-opacity-20 transition-colors duration-300 ease-in-out">
           {checked && <div className="w-4 h-4 bg-white"></div>}
