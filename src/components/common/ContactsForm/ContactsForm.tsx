@@ -178,7 +178,7 @@ const ContactsForm = () => {
       close={() => setIsModalOpen(false)}
       title='hello'
       message='success'
-      buttontext='Cancel'
+      buttonText='home'
       />
     </div>
   );
