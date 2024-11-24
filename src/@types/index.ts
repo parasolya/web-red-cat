@@ -43,6 +43,7 @@ export interface LinkButtonProp {
   children: React.ReactNode;
   href: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export interface ProjectsItemProps {
@@ -136,6 +137,6 @@ export interface ModalProps {
   isOpen: boolean;
   title: string;
   message: string;
-  buttontext: string;
+  buttonText: string;
   close: () => void;
 }
